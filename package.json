@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "nodemon src/app.js"
+    "dev": "nodemon src/app.js",
+    "pretest": "NODE_ENV=test sequelize db:migrate",
+    "test": "NODE_ENV=test jest",
+    "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +16,7 @@
   "dependencies": {
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
+    "http-status-codes": "^2.2.0",
     "pg": "^8.7.3",
     "sequelize": "^6.16.1"
   },
