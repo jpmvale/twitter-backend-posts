@@ -1,0 +1,13 @@
+
+version: '3'
+
+services:
+  postgres-compose:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "123123"
+    ports:
+      - "5432:5432"
+    volumes:
+      - /home/docker/Docker-Compose/PostgreSQL:/var/lib/postgresql/data 
+ 
