@@ -12,12 +12,15 @@ In the database folders there are 3 things: migrations, seeders, and configurati
 The project also have some automated tests to test if the endpoints are responding accordingly, basically it tests if the endpoints can create valid users, create valid posts, can validate the follow/unfollow actions, or if the user can post after already made 5 posts in under 24 hours. The automated tests runs on the SQLite database (that's why there are 2 envs: .env and .env.test), every time the tests are called, it run all migrations, insert data to make the tests, and then undo all the migrations, resetting the initial empty state of the database.
 In the controllers we have all the code for the endpoints POST and GET, and all get urls that return a list of data are paginated to be as production-ready as possible.
 In the project there is also some configuration files like .sequelizerc and config/database.js
-In order to run the project the first thing to do is to start a Postgres server on port 5432, then you must run 'npm i' or 'yarn add', and run the initial migration with the command:
-npx sequelize db:migrate
+### Running the project
+> In order to run the project the first thing to do is to start a Postgres server on port 5432, then you must run 
+```npm i``` or ```yarn install```
+and run the initial migration with the command:
+```npx sequelize db:migrate```
 To run the tests the command is:
-npm run test
+```npm run test```
 To run development HTTP server the comand is:
-npm run dev
+```npm run dev```
 # Planning
 
 - Could there be a post starting with some @ mentioning that is not a reply-to-post?
