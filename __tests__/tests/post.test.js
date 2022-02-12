@@ -59,6 +59,6 @@ describe('post creation', () => {
     await request(app).post('/posts/' + user._body.id + '/post').send({ message: 'Yoo, finally using posterr' })
     await request(app).post('/posts/' + user._body.id + '/post').send({ message: 'This is such a nice app!!' })
     const res = await request(app).get('/posts/' + user._body.id + '/all')
-    expect(res.body.length).toBe(2)
+    expect(res.body.count).toBe(2)
   })
 })

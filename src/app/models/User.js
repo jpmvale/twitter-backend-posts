@@ -10,14 +10,18 @@ class User extends Model {
         allowNull: false,
       },
       name: {
-        type: DataTypes.STRING(process.env.MAXIMUM_USERNAME_SIZE),
+        type: DataTypes.STRING,
         allowNull: false,
       },
+      created_at: {
+        type: DataTypes.DATE,
+        allowNull: true,
+      }
     }, {
       sequelize,
       freezeTableName: true,
       tableName: 'users',
-      createdAt: true,
+      createdAt: 'created_at',
       updatedAt: false,
     })
   }

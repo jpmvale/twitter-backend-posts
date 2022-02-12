@@ -18,7 +18,7 @@ class PostType extends Model {
       freezeTableName: true,
       tableName: 'post_types',
       updatedAt: false,
-      createdAt: true,
+      createdAt: false,
     })
   }
 

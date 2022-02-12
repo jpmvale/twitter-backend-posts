@@ -23,7 +23,7 @@ module.exports = {
     return queryInterface.bulkInsert('post_types', postTypes, {})
   },
 
-  async down (queryInterface, Sequelize) {
+  async down (queryInterface) {
     return queryInterface.dropTable('post_types')
   }
 }

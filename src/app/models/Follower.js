@@ -16,13 +16,17 @@ class Follower extends Model {
       following_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
+      },
+      created_at: {
+        type: DataTypes.DATE,
+        allowNull: true,
       }
     }, {
       sequelize,
       freezeTableName: true,
       tableName: 'followers',
       updatedAt: false,
-      createdAt: true,
+      createdAt: 'created_at'
     })
   }
 

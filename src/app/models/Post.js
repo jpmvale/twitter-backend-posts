@@ -14,7 +14,7 @@ class Post extends Model {
         allowNull: false,
       },
       message: {
-        type: DataTypes.STRING(process.env.MAXIMUM_POST_SIZE),
+        type: DataTypes.STRING,
         allowNull: true,
       },
       post_type_id: {
@@ -25,11 +25,15 @@ class Post extends Model {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
+      created_at: {
+        type: DataTypes.DATE,
+        allowNull: true,
+      }
     }, {
       sequelize,
       freezeTableName: true,
       tableName: 'posts',
-      createdAt: true,
+      createdAt: 'created_at',
       updatedAt: false,
     })
   }

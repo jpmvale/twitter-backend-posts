@@ -19,10 +19,14 @@ module.exports = {
         references: { model: 'users', key: 'id' },
         allowNull: false,
       },
+      created_at: {
+        type: DataTypes.DATE,
+        allowNull: true,
+      }
     })
   },
 
-  async down (queryInterface, Sequelize) {
+  async down (queryInterface) {
     return queryInterface.dropTable('followers')
   }
 }
