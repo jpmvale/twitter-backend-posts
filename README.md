@@ -12,7 +12,7 @@ In the database folders there are 3 things: migrations, seeders, and configurati
 The project also have some automated tests to test if the endpoints are responding accordingly, basically it tests if the endpoints can create valid users, create valid posts, can validate the follow/unfollow actions, or if the user can post after already made 5 posts in under 24 hours. The automated tests runs on the SQLite database (that's why there are 2 envs: .env and .env.test), every time the tests are called, it run all migrations, insert data to make the tests, and then undo all the migrations, resetting the initial empty state of the database.<br>
 In the controllers we have all the code for the endpoints POST and GET, and all get urls that return a list of data are paginated to be as production-ready as possible.<br>
 In the project there is also some configuration files like .sequelizerc and config/database.js<br>
-### Running the project
+# Running the project
 > In order to run the project the first thing to do is to start a Postgres server on port 5432, then you must run<br> 
 ```npm i``` or ```yarn install```<br>
 and run the initial migration with the command:<br>
@@ -24,12 +24,12 @@ To run development HTTP server the comand is:<br>
 
 # Critique
 
-> If i had more time, one of the first thing i would do is a robust errorHandling Middleware.
+> If i had more time, one of the first thing i would do is a robust errorHandling Middleware. <br>
 One other thing that migth be handy is to improve the pattern of routes.js, since if we had more endpoints, the file would be too big, and too complex to read, maybe if i could split each endpoint to be coded grouped by it respective controller would be better on the code scalability and easiness to read.
-It also would be possible with more time, to implement even more tests, specifically, unit tests, and e2e tests
-The relational database could be a problem if the number of users and the volume of posts increase, in order for the project to grow, and maintain performance, maybe a non-relation database (e.g. Documents collections) could work better thinking of the data volume
-Redis would be a big add-in to the project, unfortunately, i found some severe bugs when trying to use redis, but the concept of cache could be applied to some funcionalities of the API (e.g. limit 5 post per day), and reduce the number of queries to the database making the API more performant.
-In a real-life situation maybe i would try to use more webServices like aws lambda, and technologies link sentry for finding and debbuging for handling production bugs
+It also would be possible with more time, to implement even more tests, specifically, unit tests, and e2e tests <br>
+The relational database could be a problem if the number of users and the volume of posts increase, in order for the project to grow, and maintain performance, maybe a non-relation database (e.g. Documents collections) could work better thinking of the data volume <br>
+Redis would be a big add-in to the project, unfortunately, i found some severe bugs when trying to use redis, but the concept of cache could be applied to some funcionalities of the API (e.g. limit 5 post per day), and reduce the number of queries to the database making the API more performant. <br>
+In a real-life situation maybe i would try to use more webServices like aws lambda, and technologies link sentry for finding and debbuging for handling production bugs<br>
 
 # ENVs
 
