@@ -2,7 +2,7 @@
 
 > The project was developed in a Linux environment using the distro Ubuntu 20.04 using docker to handle the Database, and with Node and Express, and a ORM called sequelize which is the most popular (not the most robust), the project uses a relational database PostgresDB, and the database is launched in a docker container.<br>
 To make the database online it's necessary to run the command: <br>
-docker-compose up -d <br>
+```docker-compose up -d ```<br>
 by default im using /home/docker/Docker-Compose/PostgreSQL to store the image, and /var/lib/postgresql/data to the container <br>
 But, it's also possible to use a downloaded local instance of postgres. The database environment configuration is stored in the .env file. <br>
 The first thing that's executed is the app.js/server.js files, that basically starts the HTTP server, and load-up the routes (i.e. endpoints), all of the routes can be found in the routes.js file. Those routes basically have 2 parameters: The URL of the endpoint, and the function that will handle the request. <br>
