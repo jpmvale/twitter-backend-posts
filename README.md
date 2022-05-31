@@ -21,7 +21,7 @@ To run the tests the command is:
 ```npm run test```
 To run development HTTP server the comand is:
 ```npm run dev```
-# Planning
+# Some questions...
 
 - Could there be a post starting with some @ mentioning that is not a reply-to-post?
 - The same characters limit that is in the post is applied to the reply-to-post?
