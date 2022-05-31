@@ -21,13 +21,6 @@ To run the tests the command is:
 ```npm run test```
 To run development HTTP server the comand is:
 ```npm run dev```
-# Some questions...
-
-- Could there be a post starting with some @ mentioning that is not a reply-to-post?
-- The same characters limit that is in the post is applied to the reply-to-post?
-- What would happen to the reply-to-post when the original post get deleted?
-
-> There's really not much to change in the database, just the creation of a new postType (called: 'Reply-to-post', with probably the id 4 on the table), and linking the post that is being replied to, in the original_post_id. This would make very easy to collect "Post and Replies" since they're the same model with different post_type_id.
 
 # Critique
 
@@ -37,3 +30,15 @@ It also would be possible with more time, to implement even more tests, specific
 The relational database could be a problem if the number of users and the volume of posts increase, in order for the project to grow, and maintain performance, maybe a non-relation database (e.g. Documents collections) could work better thinking of the data volume
 Redis would be a big add-in to the project, unfortunately, i found some severe bugs when trying to use redis, but the concept of cache could be applied to some funcionalities of the API (e.g. limit 5 post per day), and reduce the number of queries to the database making the API more performant.
 In a real-life situation maybe i would try to use more webServices like aws lambda, and technologies link sentry for finding and debbuging for handling production bugs
+
+# ENVs
+
+> DB_HOST= IP FROM THE DATABASE
+DB_USER= USER FOR LOGIN TO DATABASE
+DB_PASS= PASSWORD FOR LOGIN TO DATABASE
+DB_NAME=postgres
+MAXIMUM_USER_NAME_SIZE = 14
+MAXIMUM_POST_SIZE = 777
+ORIGINAL_POST_ID = 1
+REPOST_ID = 2
+QUOTE_POST_ID = 3
